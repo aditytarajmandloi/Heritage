@@ -1,0 +1,265 @@
+{
+  "landmarks": [
+    {
+      "id": "vidhana_soudha",
+      "name": "Vidhana Soudha",
+      "style": "Neo-Dravidian",
+      "era": "Post-Independence",
+      "year_built": 1956,
+      "location": "Ambedkar Veedhi",
+      "neighborhood": "Central Bengaluru",
+      "architect": "Kengal Hanumanthaiah",
+      "image_file": "vidhana_soudha.jpg",
+      "nearby": ["state_central_library", "high_court"],
+      "coordinates": { "lat": 12.9791, "lng": 77.5913 },
+      "short_description": "The seat of Karnataka's state legislature, this massive granite structure is one of the most imposing buildings in India."
+    },
+    {
+      "id": "bangalore_palace",
+      "name": "Bangalore Palace",
+      "style": "Tudor Revival",
+      "era": "British Raj",
+      "year_built": 1878,
+      "location": "Vasanth Nagar",
+      "neighborhood": "Central Bengaluru",
+      "architect": "John Cameron",
+      "image_file": "bangalore_palace.jpg",
+      "nearby": ["vidhana_soudha"],
+      "coordinates": { "lat": 12.9988, "lng": 77.5921 },
+      "short_description": "Inspired by England's Windsor Castle, this palace features fortified towers, battlements, and Tudor-style wooden carvings."
+    },
+    {
+      "id": "tipu_sultan_palace",
+      "name": "Tipu Sultan's Summer Palace",
+      "style": "Indo-Islamic",
+      "era": "Pre-Colonial",
+      "year_built": 1791,
+      "location": "Chamrajpet",
+      "neighborhood": "Old Bengaluru",
+      "architect": "Tipu Sultan",
+      "image_file": "tipu_sultan_palace.jpg",
+      "nearby": ["bangalore_fort"],
+      "coordinates": { "lat": 12.9593, "lng": 77.5737 },
+      "short_description": "An elegant wooden summer palace known for its ornate pillars, arches, and fluted pillars in Indo-Islamic style."
+    },
+    {
+      "id": "state_central_library",
+      "name": "State Central Library",
+      "style": "Neo-Classical",
+      "era": "British Raj",
+      "year_built": 1915,
+      "location": "Cubbon Park",
+      "neighborhood": "Central Bengaluru",
+      "architect": "British Colonial Administration",
+      "image_file": "state_central_library.webp",
+      "nearby": ["vidhana_soudha", "high_court", "government_museum"],
+      "coordinates": { "lat": 12.9762, "lng": 77.5929 },
+      "short_description": "A red-painted Neo-Classical landmark inside Cubbon Park, housing one of India's oldest and largest public libraries."
+    },
+    {
+      "id": "iisc_main_building",
+      "name": "IISc Main Building",
+      "style": "Indo-Saracenic",
+      "era": "British Raj",
+      "year_built": 1911,
+      "location": "Malleswaram",
+      "neighborhood": "North Bengaluru",
+      "architect": "British Colonial Engineers",
+      "image_file": "iisc_main_building.jpg",
+      "nearby": [],
+      "coordinates": { "lat": 13.0219, "lng": 77.5671 },
+      "short_description": "The iconic main building of the Indian Institute of Science, blending Mughal domes with Gothic arches in a distinct Indo-Saracenic style."
+    },
+    {
+      "id": "nandi_temple",
+      "name": "Bull Temple (Nandi Temple)",
+      "style": "Dravidian",
+      "era": "Vijayanagara Empire",
+      "year_built": 1537,
+      "location": "Basavanagudi",
+      "neighborhood": "South Bengaluru",
+      "architect": "Kempe Gowda I",
+      "image_file": "Bangalore_Nandi_Temple.jpg",
+      "nearby": ["lalbagh"],
+      "coordinates": { "lat": 12.9418, "lng": 77.5686 },
+      "short_description": "One of the largest Nandi (bull) monolithic statues in the world, this 16th-century Dravidian temple is dedicated to Nandi, the sacred bull of Lord Shiva."
+    },
+    {
+      "id": "gavi_gangadhareshwara_temple",
+      "name": "Gavi Gangadhareshwara Temple",
+      "style": "Dravidian",
+      "era": "Vijayanagara Empire",
+      "year_built": 1537,
+      "location": "Gavipuram",
+      "neighborhood": "South Bengaluru",
+      "architect": "Kempe Gowda I",
+      "image_file": "GGTemple.jpg",
+      "nearby": ["nandi_temple"],
+      "coordinates": { "lat": 12.9440, "lng": 77.5657 },
+      "short_description": "A unique cave temple known for its remarkable astronomical phenomenon where sunlight illuminates the inner Shiva Linga on Makar Sankranti each year."
+    },
+    {
+      "id": "government_museum",
+      "name": "Government Museum",
+      "style": "Neo-Classical",
+      "era": "British Raj",
+      "year_built": 1886,
+      "location": "Kasturba Road",
+      "neighborhood": "Central Bengaluru",
+      "architect": "British Colonial Administration",
+      "image_file": "Government_Museum_Banglore.jpg",
+      "nearby": ["state_central_library", "mayo_hall"],
+      "coordinates": { "lat": 12.9725, "lng": 77.5967 },
+      "short_description": "One of the oldest museums in India, housing rare collections of art, geology, numismatics, and archaeological artifacts from the Indus Valley Civilization."
+    },
+    {
+      "id": "mayo_hall",
+      "name": "Mayo Hall",
+      "style": "Neo-Classical",
+      "era": "British Raj",
+      "year_built": 1883,
+      "location": "MG Road",
+      "neighborhood": "Central Bengaluru",
+      "architect": "British Colonial Administration",
+      "image_file": "Mayo_Hall.jpg",
+      "nearby": ["st_marks_cathedral", "government_museum"],
+      "coordinates": { "lat": 12.9740, "lng": 77.6053 },
+      "short_description": "A stately Neo-Classical building named after Lord Mayo, the former Viceroy of India, now serving as a civic hall and administrative office."
+    },
+    {
+      "id": "bangalore_fort",
+      "name": "Bangalore Fort",
+      "style": "Indo-Islamic",
+      "era": "Pre-Colonial",
+      "year_built": 1537,
+      "location": "KR Market",
+      "neighborhood": "Old Bengaluru",
+      "architect": "Kempe Gowda I",
+      "image_file": "Old_Bangalore_Fort.jpg",
+      "nearby": ["tipu_sultan_palace"],
+      "coordinates": { "lat": 12.9610, "lng": 77.5740 },
+      "short_description": "Originally a mud fort built by Kempe Gowda I in 1537, it was later rebuilt in stone by Hyder Ali in 1761. The surviving Delhi Gate stands as a testament to Bengaluru's founding history."
+    },
+    {
+      "id": "someshwara_temple",
+      "name": "Someshwara Temple",
+      "style": "Chola-Dravidian",
+      "era": "Chola Period",
+      "year_built": 1085,
+      "location": "Halasuru (Ulsoor)",
+      "neighborhood": "East Bengaluru",
+      "architect": "Chola Dynasty Artisans",
+      "image_file": "Someshwara1.jpg",
+      "nearby": [],
+      "coordinates": { "lat": 12.9807, "lng": 77.6206 },
+      "short_description": "The oldest temple in Bengaluru, dating back to the Chola period, this Dravidian masterpiece features intricate carvings and a towering gopuram dedicated to Lord Shiva."
+    },
+    {
+      "id": "st_marks_cathedral",
+      "name": "St. Mark's Cathedral",
+      "style": "Gothic Revival",
+      "era": "British Raj",
+      "year_built": 1808,
+      "location": "MG Road",
+      "neighborhood": "Central Bengaluru",
+      "architect": "Colonel J. J. Guthrie",
+      "image_file": "St._Mark's_Cathedral.jpg",
+      "nearby": ["mayo_hall"],
+      "coordinates": { "lat": 12.9725, "lng": 77.6070 },
+      "short_description": "One of the oldest Anglican churches in Asia, this Gothic Revival cathedral features elegant stained glass windows, a classic spire, and a serene cemetery within its grounds."
+    },
+    {
+      "id": "lalbagh",
+      "name": "Lalbagh Botanical Garden",
+      "style": "Colonial Landscape",
+      "era": "Pre-Colonial",
+      "year_built": 1760,
+      "location": "Lalbagh",
+      "neighborhood": "South Bengaluru",
+      "architect": "Hyder Ali",
+      "image_file": "lalbagh.jpg",
+      "nearby": ["nandi_temple", "tipu_sultan_palace"],
+      "coordinates": { "lat": 12.9507, "lng": 77.5848 },
+      "short_description": "Commissioned by Hyder Ali in 1760 and later expanded by Tipu Sultan, this 240-acre botanical garden houses a Victorian-era Glass House, a 3000-million-year-old rocky outcrop, and over 1,800 species of plants."
+    }
+  ],
+  "styles": [
+    {
+      "id": "neo_dravidian",
+      "name": "Neo-Dravidian",
+      "description": "A modern revival of traditional Dravidian temple architecture, characterized by massive granite construction, ornate pillars, and imposing facades that draw from South Indian temple traditions."
+    },
+    {
+      "id": "tudor_revival",
+      "name": "Tudor Revival",
+      "description": "An architectural style inspired by medieval English Tudor architecture, featuring fortified towers, battlements, half-timbered facades, and ornamental woodwork reminiscent of English castles."
+    },
+    {
+      "id": "indo_islamic",
+      "name": "Indo-Islamic",
+      "description": "A fusion of Indian and Islamic architectural elements, notable for pointed arches, ornate floral motifs, carved wooden pillars, and elaborate balconies reflecting Mughal and Deccan Sultanate influences."
+    },
+    {
+      "id": "neo_classical",
+      "name": "Neo-Classical",
+      "description": "A European-influenced style featuring symmetrical designs, Corinthian columns, pediments, and grand facades. Widely adopted during British colonial rule for public buildings in India."
+    },
+    {
+      "id": "indo_saracenic",
+      "name": "Indo-Saracenic",
+      "description": "A hybrid style blending Indian, Islamic, and Gothic Revival elements. Characterized by onion domes, pointed arches, minarets, and intricate jali screens, widely used in British India for institutional buildings."
+    },
+    {
+      "id": "dravidian",
+      "name": "Dravidian",
+      "description": "The ancient South Indian temple architectural tradition, featuring towering gopurams (gateway towers), mandapams (pillared halls), monolithic sculptures, and intricate stone carvings depicting mythology."
+    },
+    {
+      "id": "chola_dravidian",
+      "name": "Chola-Dravidian",
+      "description": "A sub-style of Dravidian architecture from the Chola dynasty, known for its towering vimanas (temple towers), elaborate bas-reliefs, and bronze casting tradition that influenced temple architecture across South India."
+    },
+    {
+      "id": "gothic_revival",
+      "name": "Gothic Revival",
+      "description": "A 19th-century architectural movement reviving medieval Gothic elements such as pointed arches, ribbed vaults, flying buttresses, and ornate spires, adopted in India for churches and public buildings during British rule."
+    },
+    {
+      "id": "colonial_landscape",
+      "name": "Colonial Landscape",
+      "description": "A landscape and garden design tradition blending Mughal garden symmetry with British botanical principles, featuring curated plant collections, ornamental glasshouses, and geometric pathways."
+    }
+  ],
+  "eras": [
+    {
+      "id": "pre_colonial",
+      "name": "Pre-Colonial",
+      "period": "Before 1799",
+      "description": "The era before British dominion over Bengaluru, marked by the rule of Kempe Gowda, Hyder Ali, Tipu Sultan, and the Kingdom of Mysore. This period saw the founding of Bengaluru and the construction of its earliest forts, temples, and gardens."
+    },
+    {
+      "id": "british_raj",
+      "name": "British Raj",
+      "period": "1799-1947",
+      "description": "The period of British colonial rule when Bengaluru became a major cantonment town, introducing European architectural styles alongside Indian traditions. Public buildings, churches, parks, and museums were built across the city."
+    },
+    {
+      "id": "post_independence",
+      "name": "Post-Independence",
+      "period": "1947-present",
+      "description": "The modern era after India's independence, marked by monumental civic buildings expressing national pride and identity through revived Indian architectural forms."
+    },
+    {
+      "id": "vijayanagara_empire",
+      "name": "Vijayanagara Empire",
+      "period": "1336-1646",
+      "description": "The great South Indian empire that founded Bengaluru through Kempe Gowda I in 1537. The Vijayanagara rulers patronized Dravidian temple architecture, resulting in iconic temples with monolithic sculptures and elaborate carvings."
+    },
+    {
+      "id": "chola_period",
+      "name": "Chola Period",
+      "period": "9th-13th Century",
+      "description": "The Chola dynasty controlled parts of the Bengaluru region and left behind some of the city's oldest surviving temples, characterized by refined stone carving and towering temple towers (vimanas)."
+    }
+  ]
+}
