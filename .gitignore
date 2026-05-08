@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+venv/
+
+# Environment
+.env
+
+# Generated data (re-created on startup)
+backend/chroma_data/
+backend/static/audio/*.mp3
+
+# Node
+node_modules/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
