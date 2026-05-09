@@ -1,3 +1,4 @@
+// Main header component for Heritage Explorer application
 export default function Header({ onToggleSidebar }) {
   return (
     <header className="header">

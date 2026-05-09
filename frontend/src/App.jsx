@@ -1,3 +1,4 @@
+// Enhanced React import with hooks for state management
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import ChatPanel from "./components/ChatPanel";
