@@ -1,5 +1,4 @@
-// Main header component for Heritage Explorer application
-export default function Header({ onToggleSidebar }) {
+export default function Header({ onToggleSidebar, onToggleAbout, currentEra }) {
   return (
     <header className="header">
       <div className="header__left">
@@ -12,10 +11,21 @@ export default function Header({ onToggleSidebar }) {
         </button>
         <div>
           <h1 className="header__title">Bengaluru Heritage Explorer</h1>
-          <p className="header__subtitle">
-            Multi-Modal Graph Retrieval System
-          </p>
+          <p className="header__subtitle">Multi-Modal Hybrid Graph RAG</p>
         </div>
+      </div>
+      <div className="header__right">
+        {currentEra && (
+          <span className="header__era-badge">{currentEra}</span>
+        )}
+        <button className="header__about-btn" onClick={onToggleAbout}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          About
+        </button>
       </div>
     </header>
   );
