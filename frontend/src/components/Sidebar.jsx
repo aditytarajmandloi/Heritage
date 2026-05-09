@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * Sidebar Component
+ * Displays and manages session history and navigation
+ */
 export default function Sidebar({ isOpen, sessions, activeSessionId, onSelectSession, onNewSession, onDeleteSession }) {
   if (!isOpen) return null;
 

@@ -1,6 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 import { transcribeAudio } from "../services/api";
 
+/**
+ * ChatPanel Component
+ * Handles message display and user input for the chat interface
+ */
 export default function ChatPanel({
   messages,
   isLoading,
