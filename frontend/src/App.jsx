@@ -3,7 +3,17 @@ import Header from "./components/Header";
 import ChatPanel from "./components/ChatPanel";
 import MediaPanel from "./components/MediaPanel";
 import Sidebar from "./components/Sidebar";
+import AboutPanel from "./components/AboutPanel";
 import { askQuestion, searchByImage } from "./services/api";
+
+const ERA_MAP = {
+  "Chola Period": "chola",
+  "Vijayanagara": "vijayanagara",
+  "Vijayanagara Empire": "vijayanagara",
+  "Pre-Colonial": "precolonial",
+  "British Raj": "british",
+  "Post-Independence": "postindep",
+};
 
 export default function App() {
   const [sessions, setSessions] = useState(() => {
@@ -19,6 +29,7 @@ export default function App() {
   
   const [activeSessionId, setActiveSessionId] = useState(sessions[0]?.id);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [showAbout, setShowAbout] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -29,6 +40,19 @@ export default function App() {
   const activeSession = sessions.find(s => s.id === activeSessionId) || sessions[0];
   const messages = activeSession.messages;
   const currentMedia = activeSession.currentMedia;
+
+  // Dynamic era-based theming
+  const currentEra = currentMedia?.graph_data?.era || null;
+  const eraKey = currentEra ? ERA_MAP[currentEra] || null : null;
+
+  useEffect(() => {
+    if (eraKey) {
+      document.body.setAttribute("data-era", eraKey);
+    } else {
+      document.body.removeAttribute("data-era");
+    }
+    return () => document.body.removeAttribute("data-era");
+  }, [eraKey]);
 
   const handleNewSession = () => {
     const newSession = { id: Date.now().toString(), title: "New Session", messages: [], currentMedia: null };
@@ -50,9 +74,7 @@ export default function App() {
 
   const updateActiveSession = (updates) => {
     setSessions(prev => prev.map(s => {
-      if (s.id === activeSessionId) {
-        return { ...s, ...updates };
-      }
+      if (s.id === activeSessionId) return { ...s, ...updates };
       return s;
     }));
   };
@@ -62,7 +84,6 @@ export default function App() {
 
     const userMsg = { id: Date.now(), type: "user", text };
     const newMessages = [...messages, userMsg];
-    
     const titleUpdate = messages.length === 0 ? { title: text.substring(0, 30) + (text.length > 30 ? '...' : '') } : {};
     
     updateActiveSession({ messages: newMessages, ...titleUpdate });
@@ -77,14 +98,12 @@ export default function App() {
 
       const currentLandmark = currentMedia?.graph_data?.landmark || null;
       const data = await askQuestion(text, historyPayload, currentLandmark);
-
       const aiMsg = { id: Date.now() + 1, type: "ai", text: data.answer };
       
       updateActiveSession({
         messages: [...newMessages, aiMsg],
         currentMedia: { media: data.media, graph_data: data.graph_data }
       });
-
     } catch (err) {
       console.error(err);
       setError("Failed to connect to the Heritage Knowledge Base.");
@@ -96,26 +115,18 @@ export default function App() {
   const handleImageUpload = async (imageFile) => {
     const userMsg = { id: Date.now(), type: "user", text: `[Uploaded Image: ${imageFile.name}]` };
     const newMessages = [...messages, userMsg];
-    
     updateActiveSession({ messages: newMessages });
     setIsLoading(true);
     setError(null);
 
     try {
       const data = await searchByImage(imageFile);
-      
-      if (data.error) {
-        setError(data.error);
-        return;
-      }
-
+      if (data.error) { setError(data.error); return; }
       const aiMsg = { id: Date.now() + 1, type: "ai", text: data.answer };
-      
       updateActiveSession({
         messages: [...newMessages, aiMsg],
         currentMedia: { media: data.media, graph_data: data.graph_data }
       });
-
     } catch (err) {
       console.error(err);
       setError("Failed to search by image.");
@@ -124,30 +135,44 @@ export default function App() {
     }
   };
 
+  const bgImage = currentMedia?.media?.images?.[0] || currentMedia?.media?.image_url || null;
+
   return (
     <>
-      <Header onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-      <main className="main-layout">
-        <Sidebar 
-          isOpen={isSidebarOpen}
-          sessions={sessions}
-          activeSessionId={activeSessionId}
-          onSelectSession={setActiveSessionId}
-          onNewSession={handleNewSession}
-          onDeleteSession={handleDeleteSession}
+      <div 
+        className={`app-dynamic-bg ${bgImage ? 'has-bg' : ''}`}
+        style={{ backgroundImage: bgImage ? `url(${bgImage})` : 'none' }}
+      />
+      <div className="app-dynamic-overlay" />
+      <div className="app-content-wrapper">
+        <Header 
+          onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} 
+          onToggleAbout={() => setShowAbout(true)}
+          currentEra={currentEra}
         />
-        <ChatPanel
-          messages={messages}
-          isLoading={isLoading}
-          error={error}
-          onSendMessage={handleSendMessage}
-          onImageUpload={handleImageUpload}
-        />
-        <MediaPanel
-          currentMedia={currentMedia}
-          onRelatedClick={handleSendMessage}
-        />
-      </main>
+        {showAbout && <AboutPanel onClose={() => setShowAbout(false)} />}
+        <main className="main-layout">
+          <Sidebar 
+            isOpen={isSidebarOpen}
+            sessions={sessions}
+            activeSessionId={activeSessionId}
+            onSelectSession={setActiveSessionId}
+            onNewSession={handleNewSession}
+            onDeleteSession={handleDeleteSession}
+          />
+          <ChatPanel
+            messages={messages}
+            isLoading={isLoading}
+            error={error}
+            onSendMessage={handleSendMessage}
+            onImageUpload={handleImageUpload}
+          />
+          <MediaPanel
+            currentMedia={currentMedia}
+            onRelatedClick={handleSendMessage}
+          />
+        </main>
+      </div>
     </>
   );
 }

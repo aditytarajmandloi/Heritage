@@ -22,9 +22,12 @@ services:
     build: ./frontend
     container_name: heritage-frontend
     ports:
-      - "5173:5173"
+      - "5174:5173"
     environment:
       - VITE_API_BASE_URL=http://localhost:8000
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/index.html:/app/index.html
     depends_on:
       backend:
         condition: service_healthy
