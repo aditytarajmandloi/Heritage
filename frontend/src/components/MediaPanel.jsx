@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 
+/**
+ * MediaPanel Component
+ * Displays media content (images, audio) for the selected landmark
+ * Manages image carousel functionality
+ */
 export default function MediaPanel({ currentMedia, onRelatedClick }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 

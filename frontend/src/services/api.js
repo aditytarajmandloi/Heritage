@@ -2,7 +2,10 @@ const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
 /**
  * Send a question to the backend and get a multi-modal response.
+ * Retrieves landmarks information with associated media and graph data.
  * @param {string} question - The user's question
+ * @param {Array} history - Previous conversation history
+ * @param {string} current_landmark - Currently selected landmark
  * @returns {Promise<Object>} - { answer, media: { image_url, audio_url }, graph_data }
  */
 export async function askQuestion(question, history = [], current_landmark = null) {
