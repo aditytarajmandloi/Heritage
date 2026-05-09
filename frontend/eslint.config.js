@@ -4,6 +4,8 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
+// ESLint configuration for React and modern JavaScript
+// Includes React hooks linting and hot module replacement support
 export default defineConfig([
   globalIgnores(['dist']),
   {
